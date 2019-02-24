@@ -1,25 +1,17 @@
 {
-  "name": "multi-reacts",
+  "name": "weather-app",
   "version": "1.0.0",
-  "description": "Multiple React Apps on a single Express Server",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YWHo/multi-reacts.git"
+    "build": "webpack --mode production",
+    "client": "webpack --watch --mode development",
+    "postinstall": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/YWHo/multi-reacts/issues"
-  },
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   },
