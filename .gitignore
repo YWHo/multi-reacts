@@ -68,3 +68,5 @@ typings/
 yarn-error.log
 **/yarn-error.log
 **/coverage/
+**/public/*/*.css
+**/public/*/*.html
