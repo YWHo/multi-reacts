@@ -51,6 +51,30 @@ const commonConfig = {
   devtool: 'source-map'
 }
 
+const currencyAppConfig = Object.assign({}, commonConfig, {
+  entry: {
+    app: './currency-app/index.js'
+  },
+  output: {
+    path: path.join(__dirname, './public/currency'),
+    filename: 'bundle.js'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      hash: true,
+      title: 'Currency App',
+      template: './templates/index.html',
+      chunks: ['app'],
+      path: path.join(__dirname, './public/currency'),
+      filename: 'index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    })
+  ]
+})
+
 const weatherAppConfig = Object.assign({}, commonConfig, {
   entry: {
     app: './weather-app/index.js'
@@ -76,4 +100,4 @@ const weatherAppConfig = Object.assign({}, commonConfig, {
 })
 
 
-module.exports = [weatherAppConfig]
+module.exports = [currencyAppConfig, weatherAppConfig]
